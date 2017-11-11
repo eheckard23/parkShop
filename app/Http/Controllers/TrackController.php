@@ -61,7 +61,9 @@ class TrackController extends Controller
      */
     public function show($id)
     {
-        //
+        $track = Track::find($id);
+
+        return view('track/show', ['track' => $track]);
     }
 
     /**
@@ -72,7 +74,10 @@ class TrackController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $track = Track::find($id);
+
+        return view('track/edit', ['track' => $track]);
     }
 
     /**
@@ -84,7 +89,12 @@ class TrackController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $track = Track::find($id);
+        $track->track_title = $request->get('track_title');
+        $track->track_length = $request->get('track_length');
+        $track->save();
+
+        return redirect()->action('AlbumController@show', $request->get('albumId'));
     }
 
     /**

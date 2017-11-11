@@ -21,5 +21,12 @@
 		<a href="{{ action('AlbumController@create', $artist['id']) }}">Add one now!</a>
 	@endif
 
+	<a href="{{ action('ArtistController@edit', $artist['id']) }}">Edit</a>
+
+	<form method="post" action="{{ action('ArtistController@destroy', $artist['id']) }}">
+		{{ csrf_field() }}
+		{{ method_field('DELETE') }}
+		<button type="submit">Delete</button>
+	</form>
 
 @endsection

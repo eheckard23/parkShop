@@ -70,7 +70,7 @@ class ArtistController extends Controller
     {
         $artist = Artist::find($id);
 
-        return view('artist/edit', compact('artist', 'id'));
+        return view('artist/edit', ['artist' => $artist]);
     }
 
     /**
@@ -85,7 +85,7 @@ class ArtistController extends Controller
         $artist = Artist::find($id);
         $artist->artist_name = $request->get('artist_name');
         $artist->save();
-        return redirect('/artist');
+        return redirect()->action('ArtistController@show', $id);
     }
 
     /**

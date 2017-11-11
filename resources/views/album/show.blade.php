@@ -12,15 +12,17 @@
 		<ul>
 			@foreach ($album['tracks'] as $track)
 				<li>
-					{{ $track['track_title'] }}
+					<a href="{{ action('TrackController@show', $track['id']) }}">{{ $track['track_title'] }}</a>
 					{{ $track['track_length'] }}
 				</li>
 			@endforeach
 		</ul>
+		<a href="{{ action('TrackController@create', $album['id']) }}">Add More Tracks</a>
 	@else
 		<p>This album has no tracks yet!</p>
 		<a href="{{ action('TrackController@create', $album['id']) }}">Add A Track Now!</a>
 	@endif
 
+	
 
 @endsection

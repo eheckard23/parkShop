@@ -16,9 +16,15 @@ class CreateAlbumsTable extends Migration
             $table->increments('id');
             $table->string('album_title');
             $table->string('img_url');
-            $table->integer('artist_id');
             $table->timestamps();
         });
+
+        if(Schema::hasTable('artists')){
+            Schema::table('albums', function(Blueprint $table){
+                $table->integer('artist_id')->unsigned();
+                $table->foreign('artist_id')->references('id')->on('artists')->onDelete('cascade');
+            });
+        }
     }
 
     /**
