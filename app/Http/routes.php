@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('shop/index');
 });
+
+Route::resource('artist', 'ArtistController');
