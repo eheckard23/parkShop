@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Artist;
 use App\Album;
+use App\Track;
 
-class AlbumController extends Controller
+class TrackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,9 @@ class AlbumController extends Controller
      */
     public function create($id)
     {
-        return view('album/create', ['id' => $id]);
+        $album = Album::find($id);
+
+        return view('track/create', ['album' => $album]);
     }
 
     /**
@@ -38,17 +40,17 @@ class AlbumController extends Controller
      */
     public function store(Request $request)
     {
-        $artistId = $request->get('artistId');
-        $artist = Artist::find($artistId);
+        $albumId = $request->get('albumId');
+        $album = Album::find($albumId);
 
-        $album = new Album([
-            'album_title' => $request->get('album_title'),
-            'img_url' => $request->get('img_url')
+        $track = new Track([
+            'track_title' => $request->get('track_title'),
+            'track_length' => $request->get('track_length')
         ]);
 
-        $artist->albums()->save($album);
+        $album->tracks()->save($track);
 
-        return redirect()->action('ArtistController@show', $artistId);
+        return redirect()->action('AlbumController@show', $albumId);
     }
 
     /**
@@ -59,9 +61,7 @@ class AlbumController extends Controller
      */
     public function show($id)
     {
-        $album = Album::find($id);
-
-        return view('album/show', ['album' => $album]);
+        //
     }
 
     /**

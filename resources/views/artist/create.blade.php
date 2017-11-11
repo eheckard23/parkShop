@@ -7,7 +7,7 @@
 @section('content')
 	<form method="post" action="{{ url('artist') }}">
 		{{csrf_field()}}
-		<input type="text" name="artistName" placeholder="Artist Name" />
+		<input type="text" name="artist_name" placeholder="Artist Name" />
 		<input type="submit" value="Submit" />
 	</form>
 @endsection

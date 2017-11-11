@@ -12,7 +12,7 @@
 		<ul>
 			@foreach ($artist->albums as $album)
 				<li>
-					{{ $album['title'] }}
+					<a href="{{ action('AlbumController@show', $album['id']) }}">{{ $album['album_title'] }}</a>
 				</li>
 			@endforeach
 		</ul>

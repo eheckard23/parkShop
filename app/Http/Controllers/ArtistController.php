@@ -40,7 +40,7 @@ class ArtistController extends Controller
     public function store(Request $request)
     {
         $artist = new Artist([
-        	'artist_name' => $request->get('artistName')
+        	'artist_name' => $request->get('artist_name')
         ]);
 
         $artist->save();
@@ -83,7 +83,7 @@ class ArtistController extends Controller
     public function update(Request $request, $id)
     {
         $artist = Artist::find($id);
-        $artist->artist_name = $request->get('artistName');
+        $artist->artist_name = $request->get('artist_name');
         $artist->save();
         return redirect('/artist');
     }

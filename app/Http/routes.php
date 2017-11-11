@@ -17,5 +17,7 @@ Route::get('/', function () {
 
 Route::resource('artist', 'ArtistController');
 Route::resource('album', 'AlbumController');
+Route::resource('track', 'TrackController');
 
 Route::get('/album/create/{id}', 'AlbumController@create');
+Route::get('/track/create/{id}', 'TrackController@create');
