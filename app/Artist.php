@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Artist extends Model
 {
 
-	protected $fillable = ['artist_name'];
+	protected $fillable = ['artist_name', 'album_id'];
 
     /**
     * Get the albums for this artist
     */
-    public function getAlbums(){
+    public function albums(){
     	return $this->hasMany('App\Album');
     }
 }

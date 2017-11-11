@@ -16,6 +16,7 @@ class CreateAlbumsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('imgUrl');
+            $table->integer('artist_id');
             $table->timestamps();
         });
     }

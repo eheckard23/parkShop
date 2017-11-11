@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::resource('artist', 'ArtistController');
+Route::resource('album', 'AlbumController');
+
+Route::get('/album/create/{id}', 'AlbumController@create');

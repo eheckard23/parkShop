@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Artist;
+use App\Album;
 
-class ArtistController extends Controller
+class AlbumController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +17,7 @@ class ArtistController extends Controller
      */
     public function index()
     {
-    	$artists = Artist::all()->toArray();
-
-        return view('artist/index', compact('artists'));
+        //
     }
 
     /**
@@ -26,9 +25,9 @@ class ArtistController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('artist/create');
+        return view('album/create', ['id' => $id]);
     }
 
     /**
@@ -39,12 +38,17 @@ class ArtistController extends Controller
      */
     public function store(Request $request)
     {
-        $artist = new Artist([
-        	'artist_name' => $request->get('artistName')
+        $artistId = $request->get('artistId');
+        $artist = Artist::find($artistId);
+
+        $album = new Album([
+            'title' => $request->get('title'),
+            'imgUrl' => $request->get('imgUrl')
         ]);
 
-        $artist->save();
-        return redirect('/artist');
+        $artist->albums()->save($album);
+
+        return redirect()->action('ArtistController@show', $artistId);
     }
 
     /**
@@ -55,9 +59,7 @@ class ArtistController extends Controller
      */
     public function show($id)
     {
-    	$artist = Artist::find($id);
-
-        return view('artist/show', ['artist' => $artist]);
+        //
     }
 
     /**
@@ -68,9 +70,7 @@ class ArtistController extends Controller
      */
     public function edit($id)
     {
-        $artist = Artist::find($id);
-
-        return view('artist/edit', compact('artist', 'id'));
+        //
     }
 
     /**
@@ -82,10 +82,7 @@ class ArtistController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $artist = Artist::find($id);
-        $artist->artist_name = $request->get('artistName');
-        $artist->save();
-        return redirect('/artist');
+        //
     }
 
     /**
@@ -96,10 +93,6 @@ class ArtistController extends Controller
      */
     public function destroy($id)
     {
-    	echo "test";
-        $artist = Artist::find($id);
-        $artist->delete();
-
-        return redirect('/artist');
+        //
     }
 }

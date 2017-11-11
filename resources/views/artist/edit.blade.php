@@ -5,8 +5,9 @@
 @endsection
 
 @section('content')
-	<form method="put" action="{{ url('artist/update', $id) }}">
-		{{csrf_field()}}
+	<form method="post" action="{{ action('ArtistController@update', $id) }}">
+		{{ method_field('PUT') }}
+		{{ csrf_field() }}
 		<input type="text" name="artistName" placeholder={{ $artist->artist_name }} />
 		<input type="submit" value="Submit" />
 	</form>
