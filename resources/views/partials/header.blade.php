@@ -1,8 +1,9 @@
 <header>
-	<nav>
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="{{ url('artist') }}">Artists</a></li>
+	<nav id="navigation">
+		<a id="home-link" href="/">Shop</a>
+		<ul id="navigation-right">
+			<li><a href="#">Profile</a></li>
+			<li><a href="#">Cart</a></li>
 		</ul>
 	</nav>
 </header>

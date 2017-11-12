@@ -1,0 +1,42 @@
+#latest-release-container {
+	margin-bottom: 50px;
+	padding: 5%;
+	background-color: white;
+	overflow: hidden;
+	#latest-release-image-container {
+		float: left;
+		max-width: 30%;
+		#latest-release-image {
+			width: 100%;
+		}
+	}
+	#latest-release-info {
+		float: left;
+		margin-left: 5%;
+		h3 {
+			margin-bottom: 5px;
+		}
+	}
+	
+}
+
+#new-releases-container {
+	width: 50%;
+	background-color: white;
+	.new-release-container {
+		overflow: hidden;
+		padding: 5%;
+		border-bottom: solid 1px rgba(0,0,0, 0.1);
+		.new-release-image-container {
+			max-width: 25%;
+			float: left;
+			margin-right: 5%;
+			.new-release-image {
+				width: 100%;
+			}
+			.new-release-info {
+				float: left;
+			}
+		}
+	}
+}
