@@ -28,12 +28,17 @@
 		
 		<ul>
 			@foreach($albums as $album)
-				<li>
-					<a href="{{ action('AlbumController@show', $album['id']) }}">
-						<img src="{{ $album['img_url'] }}" alt="{{ $album['album_title'] }}" />
-						<h3 id="album-title">{{ $album['album_title'] }}</h3>
-					</a>
-				</li>
+				<a href="{{ action('AlbumController@show', $album['id']) }}">
+					<li class="new-release-container">
+						<div class="new-release-image-container">
+							<img class="new-release-image" src="{{ $album['img_url'] }}" alt="{{ $album['album_title'] }}" />
+						</div>
+						<div class="new-release-info">
+							<h3 id="album-title">{{ $album['album_title'] }}</h3>
+							<p>Album by {{ $latest['artist']['artist_name'] }}</p>
+						</div>
+					</li>
+				</a>
 			@endforeach
 		</ul>
 
