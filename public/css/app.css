@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway|Playfair+Display");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -47,11 +47,18 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 2em;
-  font-weight: 800;
-  font-family: "Monsterrat", Helvetica, sans-serif; }
+  font-weight: bolder;
+  font-family: "Playfair Display", Helvetica, sans-serif; }
+
+#album-title {
+  font-family: "Playfair Display", Helvetica, sans-serif;
+  font-weight: bolder; }
 
 html {
   font-size: 62.5%; }
+
+body {
+  background-color: #f7f7f7; }
 
 a {
   text-decoration: none; }
@@ -75,11 +82,26 @@ header {
   background-color: #2B2C2D; }
 
 .container {
-  padding: 20px 5%; }
+  padding: 20px 5%;
+  border: solid 2px blue; }
 
-#latest-release {
-  border: solid 2px red; }
-  #latest-release #latest-release-image {
+#latest-release-container {
+  margin-bottom: 50px;
+  padding: 5%;
+  background-color: white;
+  overflow: hidden; }
+  #latest-release-container #latest-release-image-container {
+    float: left;
     max-width: 30%; }
+    #latest-release-container #latest-release-image-container #latest-release-image {
+      width: 100%; }
+  #latest-release-container #latest-release-info {
+    float: left;
+    margin-left: 5%; }
+    #latest-release-container #latest-release-info h3 {
+      margin-bottom: 5px; }
+
+#new-releases-container {
+  border: solid 2px red; }
 
 /*# sourceMappingURL=app.css.map */

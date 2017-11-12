@@ -11,7 +11,7 @@ class ShopController extends Controller
 {
     public function index(){
 
-    	$albums = Album::take(2)->orderBy('created_at', 'desc')->get();
+    	$albums = Album::take(5)->orderBy('created_at', 'desc')->get();
 
     	$latest = $albums[0];
 

@@ -1,0 +1,25 @@
+#latest-release-container {
+	margin-bottom: 50px;
+	padding: 5%;
+	background-color: white;
+	overflow: hidden;
+	#latest-release-image-container {
+		float: left;
+		max-width: 30%;
+		#latest-release-image {
+			width: 100%;
+		}
+	}
+	#latest-release-info {
+		float: left;
+		margin-left: 5%;
+		h3 {
+			margin-bottom: 5px;
+		}
+	}
+	
+}
+
+#new-releases-container {
+	border: solid 2px red;
+}
