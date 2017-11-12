@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway');
+
+body {
+	font: 1.6em $font-main;
+	font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 2em;
+	font-weight: 800;
+	font-family: $font-heading;
+}

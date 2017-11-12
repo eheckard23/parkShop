@@ -16,6 +16,7 @@
 				</li>
 			@endforeach
 		</ul>
+		<a href="{{ action('AlbumController@create', $artist['id']) }}">Add another album!</a>
 	@else
 		<p>This artist has no albums yet!</p>
 		<a href="{{ action('AlbumController@create', $artist['id']) }}">Add one now!</a>
