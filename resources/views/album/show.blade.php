@@ -7,7 +7,13 @@
 @section('content')
 	<h1>{{ $album['album_title'] }}</h1>
 
-	<img src="{{ $album['img_url'] }}" alt="{{ $album['album_title'] }}" />
+	<section id="album-image">
+
+		<div></div>
+		
+		<img src="{{ $album['img_url'] }}" alt="{{ $album['album_title'] }}" />
+
+	</section>
 
 	@if (count($album['tracks']) > 0)
 		<h3>Tracks</h3>

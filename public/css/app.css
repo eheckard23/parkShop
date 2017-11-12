@@ -54,36 +54,63 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", Helvetica, sans-serif;
   font-weight: bolder; }
 
+#main-page-heading {
+  text-align: center;
+  margin: 20px; }
+
 html {
   font-size: 62.5%; }
 
 body {
   background-color: #f7f7f7; }
 
-a {
-  text-decoration: none; }
-
 nav {
+  color: white; }
+
+a {
+  text-decoration: none;
+  transition: color 0.2s ease; }
+  a:visited {
+    color: inherit; }
+  a:hover {
+    color: #db0a16; }
+
+#navigation {
   overflow: hidden; }
-  nav a {
+  #navigation a {
     color: #fafff4; }
-  nav #home-link {
+  #navigation #home-link {
     display: block;
     float: left; }
-  nav ul {
+  #navigation ul {
     float: right;
     width: 50%; }
-    nav ul li {
+    #navigation ul li {
       float: right;
       margin-right: 5%; }
+
+#subnavigation {
+  padding: 10px;
+  color: #2B2C2D; }
+  #subnavigation ul {
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    overflow: hidden; }
+  #subnavigation li {
+    float: left;
+    padding: 0 10px; }
 
 header {
   padding: 10px;
   background-color: #2B2C2D; }
 
 .container {
-  padding: 20px 5%;
-  border: solid 2px blue; }
+  padding: 20px 5%; }
 
 #latest-release-container {
   margin-bottom: 50px;
@@ -116,5 +143,16 @@ header {
         width: 100%; }
       #new-releases-container .new-release-container .new-release-image-container .new-release-info {
         float: left; }
+
+#album-image {
+  width: 100%;
+  height: 400px;
+  overflow: hidden; }
+  #album-image img {
+    display: block;
+    margin-left: -2.5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; }
 
 /*# sourceMappingURL=app.css.map */

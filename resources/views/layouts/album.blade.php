@@ -10,8 +10,7 @@
 </head>
 <body>
 @include('partials/header')
-@include('partials/subnav')
-<div class='container'>
+<div class='album-container'>
 	@yield('content')
 </div>
 @yield('scripts')
