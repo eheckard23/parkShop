@@ -1,0 +1,15 @@
+#subnavigation {
+	padding: 10px;
+	color: $dark-gray;
+	ul {
+		@include push--auto;
+		width: 35%;
+		display: flex;
+		justify-content: space-around;
+		overflow: hidden;
+	}
+	li {
+		float: left;
+		padding: 0 10px;
+	}
+}

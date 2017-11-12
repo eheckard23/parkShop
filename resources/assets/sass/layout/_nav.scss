@@ -1,0 +1,18 @@
+#navigation {
+	overflow: hidden;
+	a {
+		color: $off-white;
+	}
+	#home-link {
+		display: block;
+		float: left;
+	}
+	ul {
+		float: right;
+		width: 50%;
+		li {
+			float: right;
+			margin-right: 5%;
+		}
+	}
+}

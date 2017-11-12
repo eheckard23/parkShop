@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('shop/index');
-});
+Route::get('/', 'ShopController@index');
 
 Route::resource('artist', 'ArtistController');
 Route::resource('album', 'AlbumController');

@@ -1,0 +1,21 @@
+@mixin push--auto {
+    margin: { 
+        left: auto;
+        right: auto;
+    }
+}
+
+@mixin transition($transition...) {
+	-moz-transition:    $transition;
+	-o-transition:      $transition;
+	-webkit-transition: $transition;
+	transition:         $transition;
+}
+
+
+@mixin blur($amount) {
+	-moz-filter:    blur($amount);
+	-o-filter:      blur($amount);
+	-webkit-filter: blur($amount);
+	filter:         blur($amount);
+}
