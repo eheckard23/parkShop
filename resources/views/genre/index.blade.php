@@ -12,7 +12,7 @@
 		<ul>
 			@foreach($albums as $album)
 				<li>
-					<a href="">
+					<a href="{{ action('AlbumController@show', $album->id) }}">
 						<div id="genre-albums-thumbnail">
 							<img src="{{ $album->img_url }}" alt="{{ $album->album_title }}" />
 						</div>
