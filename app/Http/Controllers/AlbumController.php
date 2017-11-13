@@ -18,25 +18,23 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $albums = Album::all();
 
-        $rockAlbums = DB::table('albums')->where('genre', 'Rock');
-        $hipHopAlbums = DB::table('albums')->where('genre', 'Hip-Hop');
-        $popAlbums = DB::table('albums')->where('genre', 'Pop');
-        $rbAlbums = DB::table('albums')->where('genre', 'R&B');
-        $latinAlbums = DB::table('albums')->where('genre', 'Latin');
-        $classicalAlbums = DB::table('albums')->where('genre', 'Classical');
-        $jazzAlbums = DB::table('albums')->where('genre', 'Jazz');
-        $indieAlbums = DB::table('albums')->where('genre', 'Indie');
-        $metalAlbums = DB::table('albums')->where('genre', 'Metal');
-        $reggaeAlbums = DB::table('albums')->where('genre', 'Reggae');
-        $soulAlbums = DB::table('albums')->where('genre', 'Soul');
-        $punkAlbums = DB::table('albums')->where('genre', 'Punk');
-        $bluesAlbums = DB::table('albums')->where('genre', 'Blues');
-        $funkAlbums = DB::table('albums')->where('genre', 'Funk');
+        $rockAlbums = DB::table('albums')->where('album_genre', '=', 'Rock')->take(4)->get();
+        $hipHopAlbums = DB::table('albums')->where('album_genre', '=', 'Hip-Hop')->take(4)->get();
+        $popAlbums = DB::table('albums')->where('album_genre', '=', 'Pop')->take(4)->get();
+        $rbAlbums = DB::table('albums')->where('album_genre', '=', 'R&B')->take(4)->get();
+        $latinAlbums = DB::table('albums')->where('album_genre', '=', 'Latin')->take(4)->get();
+        $classicalAlbums = DB::table('albums')->where('album_genre', '=', 'Classical')->take(4)->get();
+        $jazzAlbums = DB::table('albums')->where('album_genre', '=', 'Jazz')->take(4)->get();
+        $indieAlbums = DB::table('albums')->where('album_genre', '=', 'Indie')->take(4)->get();
+        $metalAlbums = DB::table('albums')->where('album_genre', '=', 'Metal')->take(4)->get();
+        $reggaeAlbums = DB::table('albums')->where('album_genre', '=', 'Reggae')->take(4)->get();
+        $soulAlbums = DB::table('albums')->where('album_genre', '=', 'Soul')->take(4)->get();
+        $punkAlbums = DB::table('albums')->where('album_genre', '=', 'Punk')->take(4)->get();
+        $bluesAlbums = DB::table('albums')->where('album_genre', '=', 'Blues')->take(4)->get();
+        $funkAlbums = DB::table('albums')->where('album_genre', '=', 'Funk')->take(4)->get();
 
         return view('album/index', [
-            'albums' => $albums,
             'rockAlbums' => $rockAlbums,
             'hipHopAlbums' => $hipHopAlbums,
             'popAlbums' => $popAlbums,
