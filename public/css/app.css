@@ -105,10 +105,11 @@ form {
   #navigation #home-link {
     display: block;
     float: left; }
-  #navigation ul {
+  #navigation #navigation-right {
+    position: relative;
     float: right;
     width: 50%; }
-    #navigation ul li {
+    #navigation #navigation-right li {
       float: right;
       margin-right: 5%; }
 
