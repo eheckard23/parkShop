@@ -15,13 +15,22 @@
 
 	@if (count($artist['albums']) > 0)
 		<h3>Albums</h3>
-		<ul>
-			@foreach ($artist->albums as $album)
-				<li>
-					<a href="{{ action('AlbumController@show', $album['id']) }}">{{ $album['album_title'] }}</a>
-				</li>
-			@endforeach
-		</ul>
+
+		<section id="artist-albums-container">
+			<ul>
+				@foreach ($artist->albums as $album)
+					<li class="artist-album">
+						<a href="{{ action('AlbumController@show', $album['id']) }}">
+							<div class="artist-album-image">
+								<img src="{{ $album['img_url'] }}" alt="{{ $album['album_title'] }}" />
+							</div>
+							<h3>{{ $album['album_title'] }}</h3>
+						</a>
+					</li>
+				@endforeach
+			</ul>
+		</section>
+		
 		<a href="{{ action('AlbumController@create', $artist['id']) }}">Add another album!</a>
 	@else
 		<p>This artist has no albums yet!</p>

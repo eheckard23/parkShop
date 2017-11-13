@@ -205,4 +205,18 @@ header {
   #artist-image #artist-image-container img {
     width: 100%; }
 
+#artist-albums-container {
+  background-color: white;
+  padding: 5%; }
+  #artist-albums-container .artist-album {
+    overflow: hidden; }
+    #artist-albums-container .artist-album .artist-album-image {
+      float: left;
+      margin-right: 5%;
+      max-width: 25%; }
+      #artist-albums-container .artist-album .artist-album-image img {
+        width: 100%; }
+      #artist-albums-container .artist-album .artist-album-image h3 {
+        float: left; }
+
 /*# sourceMappingURL=app.css.map */

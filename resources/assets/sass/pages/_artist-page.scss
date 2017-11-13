@@ -6,3 +6,22 @@
 		}
 	}
 }
+
+#artist-albums-container {
+	background-color: white;
+	padding: 5%;
+	.artist-album {
+		overflow: hidden;
+		.artist-album-image {
+			float: left;
+			margin-right: 5%;
+			max-width: 25%;
+			img {
+				width: 100%;
+			}
+			h3 {
+				float: left;
+			}
+		}
+	}
+}
