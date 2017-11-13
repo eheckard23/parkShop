@@ -5,6 +5,12 @@
 @endsection
 
 @section('content')
+
+	<section id="artist-image">
+		<div id="artist-image-container">
+			<img src="{{ $artist['artist_img'] }}" alt="{{ $artist['artist_name'] }}" />
+		</div>
+	</section>
 	<h1>{{ $artist['artist_name'] }}</h1>
 
 	@if (count($artist['albums']) > 0)

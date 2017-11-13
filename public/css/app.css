@@ -194,4 +194,9 @@ header {
       #artist-list-container .artist-listed .artist-list-thumbnail img {
         width: 100%; }
 
+#artist-image #artist-image-container {
+  max-width: 100%; }
+  #artist-image #artist-image-container img {
+    width: 100%; }
+
 /*# sourceMappingURL=app.css.map */
