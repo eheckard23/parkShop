@@ -185,13 +185,19 @@ header {
     margin-right: auto;
     width: 50%; }
 
-#artist-list-container {
-  border: solid 2px red; }
-  #artist-list-container .artist-listed {
-    border: solid 2px blue; }
-    #artist-list-container .artist-listed .artist-list-thumbnail {
-      max-width: 25%; }
-      #artist-list-container .artist-listed .artist-list-thumbnail img {
-        width: 100%; }
+#artist-list-container .artist-listed {
+  background-color: white;
+  border-bottom: solid 1px #f7f7f7;
+  padding: 5%;
+  overflow: hidden; }
+  #artist-list-container .artist-listed .artist-list-thumbnail {
+    float: left;
+    margin-right: 5%;
+    max-width: 15%; }
+    #artist-list-container .artist-listed .artist-list-thumbnail img {
+      width: 100%; }
+  #artist-list-container .artist-listed h2 {
+    float: left;
+    line-height: 80px; }
 
 /*# sourceMappingURL=app.css.map */
