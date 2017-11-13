@@ -1,12 +1,20 @@
 #artist-list-container {
-	border: solid 2px red;
 	.artist-listed {
-		border: solid 2px blue;
+		background-color: white;
+		border-bottom: solid 1px $light-gray;
+		padding: 5%;
+		overflow: hidden;
 		.artist-list-thumbnail {
-			max-width: 25%;
+			float: left;
+			margin-right: 5%;
+			max-width: 15%;
 			img {
 				width: 100%;
 			}
+		}
+		h2 {
+			float: left;
+			line-height: 80px;
 		}
 	}
 }

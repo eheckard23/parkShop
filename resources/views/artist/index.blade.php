@@ -18,6 +18,7 @@
 						<div class="artist-list-thumbnail">
 							<img src="{{ $artist['artist_img'] }}" alt="{{ $artist['artist_name'] }}" />
 						</div>
+						<h2>{{ $artist['artist_name'] }}</h2>
 					</a>
 				</li>
 			@endforeach
