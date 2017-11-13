@@ -1,0 +1,12 @@
+#artist-list-container {
+	border: solid 2px red;
+	.artist-listed {
+		border: solid 2px blue;
+		.artist-list-thumbnail {
+			max-width: 25%;
+			img {
+				width: 100%;
+			}
+		}
+	}
+}

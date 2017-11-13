@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Artist extends Model
 {
 
-	protected $fillable = ['artist_name', 'album_id'];
+	protected $fillable = ['artist_name', 'album_id', 'artist_site', 'artist_genre', 'artist_bio', 'artist_img'];
 
     /**
     * Get the albums for this artist

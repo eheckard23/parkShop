@@ -24,7 +24,7 @@
 
 	<a href="{{ action('ArtistController@edit', $artist['id']) }}">Edit</a>
 
-	<form method="post" action="{{ action('ArtistController@destroy', $artist['id']) }}">
+	<form id="delete-form" method="post" action="{{ action('ArtistController@destroy', $artist['id']) }}">
 		{{ csrf_field() }}
 		{{ method_field('DELETE') }}
 		<button type="submit">Delete</button>

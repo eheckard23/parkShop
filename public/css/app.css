@@ -75,6 +75,12 @@ a {
   a:hover {
     color: #db0a16; }
 
+form {
+  position: relative;
+  width: 30%;
+  padding: 5%;
+  background-color: white; }
+
 #navigation {
   overflow: hidden; }
   #navigation a {
@@ -111,6 +117,30 @@ header {
 
 .container {
   padding: 20px 5%; }
+
+.form-group input, .form-group textarea {
+  border: solid 1px #f7f7f7;
+  margin-bottom: 20px;
+  padding: 5px;
+  width: 95%; }
+
+.form-control {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; }
+  .form-control input[type="submit"] {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 0;
+    color: #fafff4;
+    background-color: #2B2C2D; }
+
+#delete-form {
+  width: 0;
+  padding: 0;
+  background: none; }
 
 #latest-release-container {
   margin-bottom: 50px;
@@ -154,5 +184,14 @@ header {
     margin-left: auto;
     margin-right: auto;
     width: 50%; }
+
+#artist-list-container {
+  border: solid 2px red; }
+  #artist-list-container .artist-listed {
+    border: solid 2px blue; }
+    #artist-list-container .artist-listed .artist-list-thumbnail {
+      max-width: 25%; }
+      #artist-list-container .artist-listed .artist-list-thumbnail img {
+        width: 100%; }
 
 /*# sourceMappingURL=app.css.map */
