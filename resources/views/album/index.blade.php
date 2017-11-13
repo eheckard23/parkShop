@@ -13,52 +13,52 @@
 		
 		<ul id="genre-list">
 			<li>
-				<a id="rock-thumbnail" href=""><p>Rock</p></a>
+				<a id="rock-thumbnail" href="{{ url('genre', 'rock') }}"><p>Rock</p></a>
 			</li>
 			<li>
-				<a id="indie-thumbnail" href=""><p>Indie</p></a>
+				<a id="indie-thumbnail" href="{{ url('genre', 'indie') }}"><p>Indie</p></a>
 			</li>
 			<li>
-				<a id="hiphop-thumbnail" href=""><p>Hip Hop</p></a>
+				<a id="hiphop-thumbnail" href="{{ url('genre', 'hiphop') }}"><p>Hip Hop</p></a>
 			</li>
 			<li>
-				<a id="pop-thumbnail" href=""><p>Pop</p></a>
+				<a id="pop-thumbnail" href="{{ url('genre', 'pop') }}"><p>Pop</p></a>
 			</li>
 			<li>
-				<a id="electronic-thumbnail" href=""><p>Electronic</p></a>
+				<a id="electronic-thumbnail" href="{{ url('genre', 'electronic') }}"><p>Electronic</p></a>
 			</li>
 			<li>
-				<a id="classical-thumbnail" href=""><p>Classical</p></a>
+				<a id="classical-thumbnail" href="{{ url('genre', 'classical') }}"><p>Classical</p></a>
 			</li>
 			<li>
-				<a id="jazz-thumbnail" href=""><p>Jazz</p></a>
+				<a id="jazz-thumbnail" href="{{ url('genre', 'jazz') }}"><p>Jazz</p></a>
 			</li>
 			<li>
-				<a id="punk-thumbnail" href=""><p>Punk</p></a>
+				<a id="punk-thumbnail" href="{{ url('genre', 'punk') }}"><p>Punk</p></a>
 			</li>
 			<li>
-				<a id="metal-thumbnail" href=""><p>Metal</p></a>
+				<a id="metal-thumbnail" href="{{ url('genre', 'metal') }}"><p>Metal</p></a>
 			</li>
 			<li>
-				<a id="funk-thumbnail" href=""><p>Funk</p></a>
+				<a id="funk-thumbnail" href="{{ url('genre', 'funk') }}"><p>Funk</p></a>
 			</li>
 			<li>
-				<a id="country-thumbnail" href=""><p>Country</p></a>
+				<a id="country-thumbnail" href="{{ url('genre', 'country') }}"><p>Country</p></a>
 			</li>
 			<li>
-				<a id="soul-thumbnail" href=""><p>Soul</p></a>
+				<a id="soul-thumbnail" href="{{ url('genre', 'soul') }}"><p>Soul</p></a>
 			</li>
 			<li>
-				<a id="blues-thumbnail" href=""><p>Blues</p></a>
+				<a id="blues-thumbnail" href="{{ url('genre', 'blues') }}"><p>Blues</p></a>
 			</li>
 			<li>
-				<a id="rnb-thumbnail" href=""><p>R&B</p></a>
+				<a id="rnb-thumbnail" href="{{ url('genre', 'rb') }}"><p>R&B</p></a>
 			</li>
 			<li>
-				<a id="latin-thumbnail" href=""><p>Latin</p></a>
+				<a id="latin-thumbnail" href="{{ url('genre', 'latin') }}"><p>Latin</p></a>
 			</li>
 			<li>
-				<a id="reggae-thumbnail" href=""><p>Reggae</p></a>
+				<a id="reggae-thumbnail" href="{{ url('genre', 'reggae') }}"><p>Reggae</p></a>
 			</li>
 		</ul>
 

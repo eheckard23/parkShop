@@ -258,7 +258,7 @@ header {
       height: 100%;
       color: #fafff4; }
       #genre-list li a p {
-        line-height: 190px;
+        line-height: 200px;
         font-size: 1.5em; }
   #genre-list #rock-thumbnail {
     background: url("/images/rock-genre-thumbnail.jpg") no-repeat center/cover; }
@@ -292,5 +292,19 @@ header {
     background: url("/images/latin-genre-thumbnail.jpg") no-repeat center/cover; }
   #genre-list #reggae-thumbnail {
     background: url("/images/reggae-genre-thumbnail.jpg") no-repeat center/cover; }
+
+#genre-albums-container li {
+  overflow: hidden;
+  padding: 5%;
+  background-color: white;
+  border-bottom: solid 1px #f7f7f7; }
+  #genre-albums-container li #genre-albums-thumbnail {
+    float: left;
+    max-width: 15%;
+    margin-right: 2.5%; }
+    #genre-albums-container li #genre-albums-thumbnail img {
+      width: 100%; }
+    #genre-albums-container li #genre-albums-thumbnail h3 {
+      float: left; }
 
 /*# sourceMappingURL=app.css.map */

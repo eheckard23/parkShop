@@ -19,3 +19,5 @@ Route::resource('track', 'TrackController');
 
 Route::get('/album/create/{id}', 'AlbumController@create');
 Route::get('/track/create/{id}', 'TrackController@create');
+
+Route::get('/genre/{genre}', 'AlbumController@genre');

@@ -101,6 +101,19 @@ class AlbumController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  string  $genre
+     * @return \Illuminate\Http\Response
+     */
+    public function genre($genre)
+    {
+        $albums = DB::table('albums')->where('album_genre', '=', $genre)->get();
+
+        return view('genre/index', ['title' => $genre, 'albums' => $albums]);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
