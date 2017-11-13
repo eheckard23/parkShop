@@ -1,0 +1,91 @@
+#genre-list {
+	margin-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	li {
+		position: relative;
+		margin-bottom: 20px;
+		width: 220px;
+		height: 200px;
+		text-align: center;
+		img {
+			width: 100%;
+		}
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			color: $off-white;
+			p {
+				line-height: 200px;
+				font-size: 1.5em;
+			}
+		}
+	}
+
+	#rock-thumbnail {
+		background: url('/images/rock-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+	#indie-thumbnail {
+		background: url('/images/indie-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+	#hiphop-thumbnail {
+		background: url('/images/hiphop-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+	#pop-thumbnail {
+		background: url('/images/pop-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+	#electronic-thumbnail {
+		background: url('/images/electronic-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+	#classical-thumbnail {
+		background: url('/images/classical-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+	#jazz-thumbnail {
+		background: url('/images/jazz-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+	#punk-thumbnail {
+		background: url('/images/punk-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+	#metal-thumbnail {
+		background: url('/images/metal-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+	#funk-thumbnail {
+		background: url('/images/funk-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+	#country-thumbnail {
+		background: url('/images/country-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+	#soul-thumbnail {
+		background: url('/images/soul-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+	#blues-thumbnail {
+		background: url('/images/blues-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+	#rnb-thumbnail {
+		background: url('/images/rnb-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+	#latin-thumbnail {
+		background: url('/images/latin-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+	#reggae-thumbnail {
+		background: url('/images/reggae-genre-thumbnail.jpg') no-repeat center/cover;
+	}
+
+}

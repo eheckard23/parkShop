@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use DB;
 use App\Http\Requests;
 use App\Artist;
 use App\Album;
@@ -17,9 +18,38 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $albums = Album::all();
 
-        return view('album/index', ['albums' => $albums]);
+        $rockAlbums = DB::table('albums')->where('album_genre', '=', 'Rock')->take(4)->get();
+        $hipHopAlbums = DB::table('albums')->where('album_genre', '=', 'Hip-Hop')->take(4)->get();
+        $popAlbums = DB::table('albums')->where('album_genre', '=', 'Pop')->take(4)->get();
+        $rbAlbums = DB::table('albums')->where('album_genre', '=', 'R&B')->take(4)->get();
+        $latinAlbums = DB::table('albums')->where('album_genre', '=', 'Latin')->take(4)->get();
+        $classicalAlbums = DB::table('albums')->where('album_genre', '=', 'Classical')->take(4)->get();
+        $jazzAlbums = DB::table('albums')->where('album_genre', '=', 'Jazz')->take(4)->get();
+        $indieAlbums = DB::table('albums')->where('album_genre', '=', 'Indie')->take(4)->get();
+        $metalAlbums = DB::table('albums')->where('album_genre', '=', 'Metal')->take(4)->get();
+        $reggaeAlbums = DB::table('albums')->where('album_genre', '=', 'Reggae')->take(4)->get();
+        $soulAlbums = DB::table('albums')->where('album_genre', '=', 'Soul')->take(4)->get();
+        $punkAlbums = DB::table('albums')->where('album_genre', '=', 'Punk')->take(4)->get();
+        $bluesAlbums = DB::table('albums')->where('album_genre', '=', 'Blues')->take(4)->get();
+        $funkAlbums = DB::table('albums')->where('album_genre', '=', 'Funk')->take(4)->get();
+
+        return view('album/index', [
+            'rockAlbums' => $rockAlbums,
+            'hipHopAlbums' => $hipHopAlbums,
+            'popAlbums' => $popAlbums,
+            'rbAlbums' => $rbAlbums,
+            'latinAlbums' => $latinAlbums,
+            'classicalAlbums' => $classicalAlbums,
+            'jazzAlbums' => $jazzAlbums,
+            'indieAlbums' => $indieAlbums,
+            'metalAlbums' => $metalAlbums,
+            'reggaeAlbums' => $reggaeAlbums,
+            'soulAlbums' => $soulAlbums,
+            'punkAlbums' => $punkAlbums,
+            'bluesAlbums' => $bluesAlbums,
+            'funkAlbums' => $funkAlbums
+        ]);
     }
 
     /**
@@ -68,6 +98,19 @@ class AlbumController extends Controller
         $album = Album::find($id);
 
         return view('album/show', ['album' => $album]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  string  $genre
+     * @return \Illuminate\Http\Response
+     */
+    public function genre($genre)
+    {
+        $albums = DB::table('albums')->where('album_genre', '=', $genre)->get();
+
+        return view('genre/index', ['title' => $genre, 'albums' => $albums]);
     }
 
     /**

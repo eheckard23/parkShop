@@ -46,9 +46,26 @@ body {
   font-weight: 700; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 2em;
   font-weight: bolder;
   font-family: "Playfair Display", Helvetica, sans-serif; }
+
+h1 {
+  font-size: 3em; }
+
+h2 {
+  font-size: 2.5em; }
+
+h3 {
+  font-size: 2em; }
+
+h4 {
+  font-size: 1.5em; }
+
+h5 {
+  font-size: 1em; }
+
+h6 {
+  font-size: 0.5em; }
 
 #album-title {
   font-family: "Playfair Display", Helvetica, sans-serif;
@@ -199,5 +216,95 @@ header {
   #artist-list-container .artist-listed h2 {
     float: left;
     line-height: 80px; }
+
+#artist-image #artist-image-container {
+  max-width: 100%; }
+  #artist-image #artist-image-container img {
+    width: 100%; }
+
+#artist-albums-container {
+  background-color: white;
+  padding: 5%; }
+  #artist-albums-container .artist-album {
+    overflow: hidden; }
+    #artist-albums-container .artist-album .artist-album-image {
+      float: left;
+      margin-right: 5%;
+      max-width: 25%; }
+      #artist-albums-container .artist-album .artist-album-image img {
+        width: 100%; }
+      #artist-albums-container .artist-album .artist-album-image h3 {
+        float: left; }
+
+#genre-list {
+  margin-top: 50px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+  #genre-list li {
+    position: relative;
+    margin-bottom: 20px;
+    width: 220px;
+    height: 200px;
+    text-align: center; }
+    #genre-list li img {
+      width: 100%; }
+    #genre-list li a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: #fafff4; }
+      #genre-list li a p {
+        line-height: 200px;
+        font-size: 1.5em; }
+  #genre-list #rock-thumbnail {
+    background: url("/images/rock-genre-thumbnail.jpg") no-repeat center/cover; }
+  #genre-list #indie-thumbnail {
+    background: url("/images/indie-genre-thumbnail.jpg") no-repeat center/cover; }
+  #genre-list #hiphop-thumbnail {
+    background: url("/images/hiphop-genre-thumbnail.jpg") no-repeat center/cover; }
+  #genre-list #pop-thumbnail {
+    background: url("/images/pop-genre-thumbnail.jpg") no-repeat center/cover; }
+  #genre-list #electronic-thumbnail {
+    background: url("/images/electronic-genre-thumbnail.jpg") no-repeat center/cover; }
+  #genre-list #classical-thumbnail {
+    background: url("/images/classical-genre-thumbnail.jpg") no-repeat center/cover; }
+  #genre-list #jazz-thumbnail {
+    background: url("/images/jazz-genre-thumbnail.jpg") no-repeat center/cover; }
+  #genre-list #punk-thumbnail {
+    background: url("/images/punk-genre-thumbnail.jpg") no-repeat center/cover; }
+  #genre-list #metal-thumbnail {
+    background: url("/images/metal-genre-thumbnail.jpg") no-repeat center/cover; }
+  #genre-list #funk-thumbnail {
+    background: url("/images/funk-genre-thumbnail.jpg") no-repeat center/cover; }
+  #genre-list #country-thumbnail {
+    background: url("/images/country-genre-thumbnail.jpg") no-repeat center/cover; }
+  #genre-list #soul-thumbnail {
+    background: url("/images/soul-genre-thumbnail.jpg") no-repeat center/cover; }
+  #genre-list #blues-thumbnail {
+    background: url("/images/blues-genre-thumbnail.jpg") no-repeat center/cover; }
+  #genre-list #rnb-thumbnail {
+    background: url("/images/rnb-genre-thumbnail.jpg") no-repeat center/cover; }
+  #genre-list #latin-thumbnail {
+    background: url("/images/latin-genre-thumbnail.jpg") no-repeat center/cover; }
+  #genre-list #reggae-thumbnail {
+    background: url("/images/reggae-genre-thumbnail.jpg") no-repeat center/cover; }
+
+#genre-albums-container li {
+  overflow: hidden;
+  padding: 5%;
+  background-color: white;
+  border-bottom: solid 1px #f7f7f7; }
+  #genre-albums-container li #genre-albums-thumbnail {
+    float: left;
+    max-width: 15%;
+    margin-right: 2.5%; }
+    #genre-albums-container li #genre-albums-thumbnail img {
+      width: 100%; }
+    #genre-albums-container li #genre-albums-thumbnail h3 {
+      float: left; }
 
 /*# sourceMappingURL=app.css.map */

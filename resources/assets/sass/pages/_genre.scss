@@ -1,0 +1,19 @@
+#genre-albums-container {
+	li {
+		overflow: hidden;
+		padding: 5%;
+		background-color: white;
+		border-bottom: solid 1px $light-gray;
+		#genre-albums-thumbnail {
+			float: left;
+			max-width: 15%;
+			margin-right: 2.5%;
+			img {
+				width: 100%;
+			}
+			h3 {
+				float: left;
+			}
+		}
+	}
+}
