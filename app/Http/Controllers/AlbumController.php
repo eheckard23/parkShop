@@ -45,7 +45,11 @@ class AlbumController extends Controller
 
         $album = new Album([
             'album_title' => $request->get('album_title'),
-            'img_url' => $request->get('img_url')
+            'img_url' => $request->get('img_url'),
+            'album_genre' => $request->get('album_genre'),
+            'release_date' => $request->get('release_date'),
+            'in_stock' => $request->get('in_stock'),
+            'price' => $request->get('price'),
         ]);
 
         $artist->albums()->save($album);

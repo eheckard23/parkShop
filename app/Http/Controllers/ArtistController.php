@@ -39,8 +39,13 @@ class ArtistController extends Controller
      */
     public function store(Request $request)
     {
+
         $artist = new Artist([
-        	'artist_name' => $request->get('artist_name')
+            'artist_name' => $request->get('artist_name'),
+            'artist_site' => $request->get('artist_site'),
+            'artist_genre' => $request->get('artist_genre'),
+            'artist_bio' => $request->get('artist_bio'),
+            'artist_img' => $request->get('artist_img')
         ]);
 
         $artist->save();

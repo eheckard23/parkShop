@@ -15,6 +15,10 @@ class CreateArtistsTable extends Migration
         Schema::create('artists', function (Blueprint $table) {
             $table->increments('id');
             $table->string('artist_name');
+            $table->string('artist_site');
+            $table->enum('artist_genre', ['Rock', 'Hip-Hop', 'Pop', 'Country', 'R&B', 'Latin', 'Classical', 'Jazz', 'Indie', 'Metal', 'Reggae', 'Soul', 'Punk', 'Blues', 'Funk']);
+            $table->text('artist_bio');
+            $table->string('artist_img');
             $table->timestamps();
         });
     }

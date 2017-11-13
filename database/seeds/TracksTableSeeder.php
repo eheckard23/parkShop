@@ -22,5 +22,21 @@ class TracksTableSeeder extends Seeder
         ]);
 
         $track->save();
+
+        $track = new Track([
+            'track_title' => 'Wasted Acres',
+            'track_length' => '2:52',
+            'album_id' => 2
+        ]);
+
+        $track->save();
+
+        $track = new Track([
+            'track_title' => 'The Valley',
+            'track_length' => '4:43',
+            'album_id' => 3
+        ]);
+
+        $track->save();
     }
 }
