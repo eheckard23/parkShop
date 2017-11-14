@@ -9,9 +9,11 @@
 
 	<section id="album-image">
 
-		<div></div>
+		<div>
+			<img src="{{ $album['img_url'] }}" alt="{{ $album['album_title'] }}" />
+		</div>
 		
-		<img src="{{ $album['img_url'] }}" alt="{{ $album['album_title'] }}" />
+		
 
 	</section>
 
