@@ -14,7 +14,6 @@ class ArtistsTableSeeder extends Seeder
     {
 
         $artists = [
-
             [
                 'artist_name' => 'Radiohead',
                 'artist_site' => 'https://www.radiohead.com/deadairspace',
@@ -42,11 +41,12 @@ class ArtistsTableSeeder extends Seeder
                 'artist_genre' => 'Rock',
                 'artist_bio' => "Pink Floyd were an English rock band formed in London in 1965. They achieved international acclaim with their progressive and psychedelic music. Distinguished by their use of philosophical lyrics, sonic experimentation, extended compositions, and elaborate live shows, they are one of the most commercially successful and influential groups in popular music history. Pink Floyd were founded by students Syd Barrett on guitar and lead vocals, Nick Mason on drums, Roger Waters on bass and vocals, and Richard Wright on keyboards and vocals. They gained popularity performing in London's underground music scene during the late 1960s, and under Barrett's leadership released two charting singles and a successful debut album, The Piper at the Gates of Dawn (1967). Guitarist and vocalist David Gilmour joined in December 1967; Barrett left in April 1968 due to deteriorating mental health. Waters became the band's primary lyricist and conceptual leader, devising the concepts behind their albums The Dark Side of the Moon (1973), Wish You Were Here (1975), Animals (1977), The Wall (1979) and The Final Cut (1983). The Dark Side of the Moon and The Wall became two of the best-selling albums of all time. Following creative tensions, Wright left Pink Floyd in 1979, followed by Waters in 1985. Gilmour and Mason continued as Pink Floyd; Wright rejoined them as a session musician and, later, a band member. The three produced two more albums—A Momentary Lapse of Reason (1987) and The Division Bell (1994)—and toured through 1994. After nearly two decades of acrimony, Gilmour, Wright, and Mason reunited with Waters in 2005 to perform as Pink Floyd in London as part of the global awareness event Live 8; Gilmour and Waters later stated they had no plans to reunite as a band again. Barrett died in 2006, and Wright in 2008. The final Pink Floyd studio album, The Endless River (2014), was recorded without Waters and based almost entirely on unreleased material. Pink Floyd were inducted into the American Rock and Roll Hall of Fame in 1996 and the UK Music Hall of Fame in 2005. By 2013, the band had sold more than 250 million records worldwide.",
                 'artist_img' => 'https://www.rockhall.com/sites/default/files/styles/twitter_card_crop_top/public/pinkfloyd_001a-crop.jpg?itok=Ol50Ma86'
-            ],
-
+            ]
         ];
 
-        DB::table('artists')->insert($artists);
+        foreach ($artists as $artist) {
+            Artist::create($artist);
+        }
 
     }
 }

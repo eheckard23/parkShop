@@ -35,7 +35,7 @@
 						</div>
 						<div class="new-release-info">
 							<h3 id="album-title">{{ $album['album_title'] }}</h3>
-							<p>Album by {{ $latest['artist']['artist_name'] }}</p>
+							<p>Album by {{ $album['artist']['artist_name'] }}</p>
 						</div>
 						</a>
 					</li>
