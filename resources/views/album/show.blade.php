@@ -5,17 +5,20 @@
 @endsection
 
 @section('content')
-	<h1>{{ $album['album_title'] }}</h1>
+	<h1 id="album-title">{{ $album['album_title'] }}</h1>
 
 	<section id="album-image">
 
-		<div>
+		<div id="album-image-container">
+			<p>${{ $album['price'] }}</p>
 			<img src="{{ $album['img_url'] }}" alt="{{ $album['album_title'] }}" />
 		</div>
-		
-		
+				
+		<a id="add-to-cart" href="#">Add to Cart</a>
 
 	</section>
+
+		
 
 	@if (count($album['tracks']) > 0)
 		<h3>Tracks</h3>
