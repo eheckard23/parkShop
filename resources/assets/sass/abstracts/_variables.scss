@@ -1,7 +1,9 @@
 // colors
 $dark-gray: #2B2C2D;
-$off-white: #fafff4;
+$darkish-gray: #595955;
+$mid-gray: #A6A6A6;
 $light-gray: #f7f7f7;
+$off-white: #fafff4;
 $deep-red: #db0a16;
 
 // font families
@@ -12,3 +14,10 @@ $album-title-heading: 'Playfair Display', Helvetica, sans-serif;
 // font sizes
 $main-size: 1.6rem;
 $heading-size: 2rem;
+
+// media query breakpoints
+$breakpoints: (
+	'small': (min-width: 328px),
+	'medium': (min-width: 1024),
+	'large': (min-width: 1440)
+);

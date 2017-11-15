@@ -16,7 +16,7 @@ class CreateAlbumsTable extends Migration
             $table->increments('id');
             $table->string('album_title');
             $table->string('img_url');
-            $table->enum('album_genre', ['Rock', 'Hip-Hop', 'Pop', 'Country', 'R&B', 'Latin', 'Classical', 'Jazz', 'Indie', 'Metal', 'Reggae', 'Soul', 'Punk', 'Blues', 'Funk']);
+            $table->enum('album_genre', ['Rock', 'Hip-Hop', 'Pop', 'Country', 'R&B', 'Latin', 'Classical', 'Jazz', 'Indie', 'Metal', 'Reggae', 'Soul', 'Punk', 'Blues', 'Funk', 'Electronic']);
             $table->integer('release_date');
             $table->integer('in_stock');
             $table->integer('price');

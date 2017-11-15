@@ -5,32 +5,32 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Album;
-use App\Track;
+use App\User;
+use Auth;
+use Session;
 
-class TrackController extends Controller
+class UserController extends Controller
 {
 
     public function __construct() {
 
         $this->middleware('auth', ['only' => [
-            'create',
-            'store',
+            'show',
             'edit',
             'update',
             'destroy'
         ]]);
-
     }
 
+
     /**
-     * Display a listing of the resource.
+     * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function create()
     {
-        //
+        return view('user/signup');
     }
 
     /**
@@ -38,11 +38,29 @@ class TrackController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function login()
     {
-        $album = Album::find($id);
 
-        return view('track/create', ['album' => $album]);
+        return view('user/signin');
+
+    }
+
+    public function authLogin(Request $request) {
+
+        if(Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
+
+            return redirect('/');
+        }
+
+        return redirect()->back();
+
+    }
+
+    public function logout(Request $request) {
+
+        Auth::logout();
+        $request->session()->flush();
+        return redirect('/');
     }
 
     /**
@@ -53,17 +71,24 @@ class TrackController extends Controller
      */
     public function store(Request $request)
     {
-        $albumId = $request->get('albumId');
-        $album = Album::find($albumId);
 
-        $track = new Track([
-            'track_title' => $request->get('track_title'),
-            'track_length' => $request->get('track_length')
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'email|required|unique:users',
+            'password' => 'required|min:4'
         ]);
 
-        $album->tracks()->save($track);
+        $user = new User([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'password' => bcrypt($request->get('password'))
+        ]);
 
-        return redirect()->action('AlbumController@show', $albumId);
+        $user->save();
+
+        Auth::login($user);
+
+        return redirect('/');
     }
 
     /**
@@ -74,9 +99,7 @@ class TrackController extends Controller
      */
     public function show($id)
     {
-        $track = Track::find($id);
-
-        return view('track/show', ['track' => $track]);
+        //
     }
 
     /**
@@ -87,10 +110,7 @@ class TrackController extends Controller
      */
     public function edit($id)
     {
-
-        $track = Track::find($id);
-
-        return view('track/edit', ['track' => $track]);
+        //
     }
 
     /**
@@ -102,12 +122,7 @@ class TrackController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $track = Track::find($id);
-        $track->track_title = $request->get('track_title');
-        $track->track_length = $request->get('track_length');
-        $track->save();
-
-        return redirect()->action('AlbumController@show', $request->get('albumId'));
+        //
     }
 
     /**

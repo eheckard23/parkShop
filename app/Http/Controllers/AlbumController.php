@@ -11,6 +11,17 @@ use App\Album;
 
 class AlbumController extends Controller
 {
+
+    public function __construct() {
+
+        $this->middleware('auth', ['except' => [
+            'index',
+            'show',
+            'genre'
+        ]]);
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -120,18 +131,6 @@ class AlbumController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
     {
         //
     }
