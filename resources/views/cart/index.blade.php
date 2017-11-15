@@ -13,7 +13,24 @@
 			<h1>Your Cart ({{ $totalQty }})</h1>
 			<h4>${{ $totalPrice }}</h4>
 
-			<a href="{{ url('checkout') }}">Checkout</a>
+			<form class="checkout-form" action="{{ url('checkout') }}" method="POST">
+	
+				{{ csrf_field() }}
+
+			  <script
+			    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+			    data-key="pk_test_251yK3wCOeqhMdNdxYB42VfX"
+			    data-amount="{{ $totalPrice }}00"
+			    data-name="Park Shop"
+			    data-description="Checkout Button"
+			    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+			    data-locale="auto"
+			    data-zip-code="true">
+			  </script>
+
+				<input type="hidden" name="totalPrice" value="{{ $totalPrice }}" />
+
+			</form>
 			
 			<ol class="cart-list">
 

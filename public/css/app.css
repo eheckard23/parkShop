@@ -361,6 +361,12 @@ header {
     #genre-albums-container li #genre-albums-thumbnail h3 {
       float: left; }
 
+.checkout-form {
+  position: none;
+  margin-top: 30px;
+  padding: 0;
+  background: none; }
+
 .cart-list {
   margin-top: 50px;
   background-color: white;

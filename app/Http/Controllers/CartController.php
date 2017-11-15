@@ -44,8 +44,6 @@ class CartController extends Controller {
      */
     public function addToCart(Request $request, $id)
     {
-
-        dd('test');
         // add item to cart
         $item = Album::find($id);
         $oldCart = $request->session()->get('cart') ? $request->session()->get('cart') : null;
