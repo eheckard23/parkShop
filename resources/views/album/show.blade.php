@@ -26,7 +26,7 @@
 
 		</section>
 
-		<a class="add-to-cart" href="#">Add to Cart</a>
+		<a class="add-to-cart" href="{{ url('cart', $album['id']) }}">Add to Cart</a>
 
 	</section>
 

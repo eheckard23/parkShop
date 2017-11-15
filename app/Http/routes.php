@@ -21,3 +21,6 @@ Route::get('/album/create/{id}', 'AlbumController@create');
 Route::get('/track/create/{id}', 'TrackController@create');
 
 Route::get('/genre/{genre}', 'AlbumController@genre');
+
+Route::get('/cart', 'CartController@index');
+Route::get('/cart/{id}', 'CartController@addToCart');
