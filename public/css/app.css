@@ -361,4 +361,22 @@ header {
     #genre-albums-container li #genre-albums-thumbnail h3 {
       float: left; }
 
+.cart-list {
+  margin-top: 50px; }
+  .cart-list li {
+    margin-bottom: 30px;
+    overflow: hidden; }
+    .cart-list li .cart-image-container {
+      width: 10%;
+      float: left;
+      margin-right: 20px; }
+      .cart-list li .cart-image-container img {
+        width: 100%; }
+    .cart-list li .cart-actions {
+      float: left; }
+      .cart-list li .cart-actions li {
+        margin-bottom: 0; }
+      .cart-list li .cart-actions span {
+        font-size: 1.5em; }
+
 /*# sourceMappingURL=app.css.map */
