@@ -13,7 +13,6 @@
 
 			@endif
 			<li><a href="{{ url('cart') }}">Cart</a></li>
-			<li><a href="{{ url('session/delete') }}">Delete Session</a></li>
 		</ul>
 	</nav>
 </header>
