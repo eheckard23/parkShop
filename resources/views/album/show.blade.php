@@ -5,32 +5,54 @@
 @endsection
 
 @section('content')
-	<h1 id="album-title">{{ $album['album_title'] }}</h1>
 
-	<section id="album-image">
+	<section class="album-container">
+		
+		<section class="album-heading">
 
-		<div id="album-image-container">
-			<p>${{ $album['price'] }}</p>
-			<img src="{{ $album['img_url'] }}" alt="{{ $album['album_title'] }}" />
-		</div>
-				
-		<a id="add-to-cart" href="#">Add to Cart</a>
+			<h1 class="album-title">{{ $album['album_title'] }}</h1>
+			<p class="album-artist">Album by {{ $album['artist']['artist_name'] }}</p>
+
+			<p class="album-price">${{ $album['price'] }}</p>
+
+		</section>
+		
+
+		<section class="album-image">
+
+			<div class="album-image-container">
+				<img src="{{ $album['img_url'] }}" alt="{{ $album['album_title'] }}" />
+			</div>
+
+		</section>
+
+		<a class="add-to-cart" href="#">Add to Cart</a>
 
 	</section>
+
+	
 
 		
 
 	@if (count($album['tracks']) > 0)
-		<h3>Tracks</h3>
+	
+	<section class="album-tracks">
+		
+	<h3>Tracks</h3>
 		<ul>
-			@foreach ($album['tracks'] as $track)
+			@foreach ($album['tracks'] as $key=>$track)
 				<li>
-					<a href="{{ action('TrackController@show', $track['id']) }}">{{ $track['track_title'] }}</a>
-					{{ $track['track_length'] }}
+					<span class="track-number">{{ $key + 1 }}</span>
+					<span class="track-title">{{ $track['track_title'] }}</span>
+					<span class="track-length">{{ $track['track_length'] }}</span> 
 				</li>
 			@endforeach
 		</ul>
 		<a href="{{ action('TrackController@create', $album['id']) }}">Add More Tracks</a>
+
+	</section>
+
+		
 	@else
 		<p>This album has no tracks yet!</p>
 		<a href="{{ action('TrackController@create', $album['id']) }}">Add A Track Now!</a>

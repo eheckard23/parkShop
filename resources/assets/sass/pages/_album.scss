@@ -1,10 +1,30 @@
-#album-image {
-	width: 100%;
-	margin-bottom: 30px;
-	#album-image-container {
+.album-container {
+	background-color: white;
+	padding: 5%;
+	overflow: hidden;
+}
+
+.album-heading {
+	float: left;
+	p {
+		color: $darkish-gray;
+		margin-bottom: 10px;
+	}
+	.album-artist {
+		color: $mid-gray;
+	}
+	.album-price {
+		color: $deep-red;
+	}
+}
+
+
+.album-image {
+	float: right;
+	width: 50%;
+	.album-image-container {
 		position: relative;
-		width: 30%;
-		@include push--auto;
+		float: right;
 		p {
 			position: absolute;
 			top: -30px;
@@ -20,6 +40,37 @@
 		}
 		img {
 			width: 100%;
+		}
+	}
+}
+
+.add-to-cart {
+	display: block;
+	float: left;
+	margin-top: 50px;
+	padding: 10px 30px;
+	width: 150px;
+	text-align: center;
+	color: $off-white;
+	background-color: $dark-gray;
+}
+
+.album-tracks {
+	padding: 5%;
+	ul {
+		margin-top: 20px;
+		li {
+			overflow: hidden;
+			margin: 20px 0;
+			.track-number {
+				margin-right: 20px;
+			}
+			.track-number, .track-title {
+				float: left;
+			}
+			.track-length {
+				float: right;
+			}
 		}
 	}
 }

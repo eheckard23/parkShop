@@ -43,7 +43,8 @@ table {
 
 body {
   font: 1.6em "Raleway", Helvetica, sans-serif;
-  font-weight: 700; }
+  font-weight: 700;
+  color: #595955; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bolder;
@@ -67,12 +68,12 @@ h5 {
 h6 {
   font-size: 0.5em; }
 
-#album-title {
+.album-title {
   font-family: "Playfair Display", Helvetica, sans-serif;
   font-weight: bolder;
-  font-size: 1.5em;
-  margin-bottom: 80px;
-  text-align: center; }
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 5px; }
 
 #main-page-heading {
   text-align: center;
@@ -163,25 +164,6 @@ header {
   padding: 0;
   background: none; }
 
-button, #add-to-cart {
-  border: none;
-  background-color: #2B2C2D;
-  color: #fafff4;
-  padding: 20px 50px;
-  font-size: 1em;
-  font-weight: lighter;
-  cursor: pointer;
-  border-radius: 5px; }
-
-#add-to-cart {
-  display: block;
-  margin-top: 30px;
-  padding: 15px 50px;
-  width: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center; }
-
 #latest-release-container {
   margin-bottom: 50px;
   padding: 5%;
@@ -214,15 +196,28 @@ button, #add-to-cart {
       #new-releases-container .new-release-container .new-release-image-container .new-release-info {
         float: left; }
 
-#album-image {
-  width: 100%;
-  margin-bottom: 30px; }
-  #album-image #album-image-container {
+.album-container {
+  background-color: white;
+  padding: 5%;
+  overflow: hidden; }
+
+.album-heading {
+  float: left; }
+  .album-heading p {
+    color: #595955;
+    margin-bottom: 10px; }
+  .album-heading .album-artist {
+    color: #A6A6A6; }
+  .album-heading .album-price {
+    color: #db0a16; }
+
+.album-image {
+  float: right;
+  width: 50%; }
+  .album-image .album-image-container {
     position: relative;
-    width: 30%;
-    margin-left: auto;
-    margin-right: auto; }
-    #album-image #album-image-container p {
+    float: right; }
+    .album-image .album-image-container p {
       position: absolute;
       top: -30px;
       left: -30px;
@@ -234,8 +229,32 @@ button, #add-to-cart {
       color: #fafff4;
       background-color: #db0a16;
       border-radius: 100%; }
-    #album-image #album-image-container img {
+    .album-image .album-image-container img {
       width: 100%; }
+
+.add-to-cart {
+  display: block;
+  float: left;
+  margin-top: 50px;
+  padding: 10px 30px;
+  width: 150px;
+  text-align: center;
+  color: #fafff4;
+  background-color: #2B2C2D; }
+
+.album-tracks {
+  padding: 5%; }
+  .album-tracks ul {
+    margin-top: 20px; }
+    .album-tracks ul li {
+      overflow: hidden;
+      margin: 20px 0; }
+      .album-tracks ul li .track-number {
+        margin-right: 20px; }
+      .album-tracks ul li .track-number, .album-tracks ul li .track-title {
+        float: left; }
+      .album-tracks ul li .track-length {
+        float: right; }
 
 #artist-list-container .artist-listed {
   background-color: white;

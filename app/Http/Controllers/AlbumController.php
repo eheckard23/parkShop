@@ -88,6 +88,17 @@ class AlbumController extends Controller
     }
 
     /**
+     * Add to cart
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function addToCart($id)
+    {
+        //
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  int  $id
