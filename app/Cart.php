@@ -37,6 +37,16 @@ class Cart
     	$this->totalPrice += $item->price;
     }
 
+    // add one to cart
+    public function addOne($item, $id) {
+        if (array_key_exists($id, $this->items)) {
+            $this->items[$id]['qty']++;
+            $this->items[$id]['price'] += $this->items[$id]['item']['price'];
+            $this->totalQty++;
+            $this->totalPrice += $this->items[$id]['item']['price'];
+        }
+    }
+
     // remove item from cart
     public function remove($item, $id) {
         if (array_key_exists($id, $this->items)) {

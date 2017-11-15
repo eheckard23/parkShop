@@ -46,6 +46,23 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      * @param id
      */
+    public function addOneToCart(Request $request, $id) {
+    	$item = Album::find($id);
+    	$oldCart = Session::has('cart') ? Session::get('cart') : null;
+    	$cart = new Cart($oldCart);
+    	$cart->addOne($item, $item['id']);
+
+    	$request->session()->put('cart', $cart);
+
+    	return redirect()->back();
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     * @param id
+     */
     public function removeFromCart(Request $request, $id) {
     	$item = Album::find($id);
     	$oldCart = Session::has('cart') ? Session::get('cart') : null;
