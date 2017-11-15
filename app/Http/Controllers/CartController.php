@@ -11,6 +11,14 @@ use App\Cart;
 
 class CartController extends Controller {
 
+    public function __construct() {
+
+        $this->middleware('auth', ['only' => [
+            'checkout'
+        ]]);
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -99,21 +107,21 @@ class CartController extends Controller {
 
     }
 
-    public function checkout(Request $request) {
+    // public function checkout(Request $request) {
 
-        if($request->session()->get('cart')) {
+    //     if($request->session()->get('cart')) {
 
-            $cart = $request->session()->get('cart');
+    //         $cart = $request->session()->get('cart');
 
-            $totalPrice = $cart->totalPrice;
+    //         $totalPrice = $cart->totalPrice;
 
-            return view('cart/checkout', ['totalPrice' => $totalPrice]);
+    //         return view('cart/checkout', ['totalPrice' => $totalPrice]);
 
-        }
+    //     }
 
-        return redirect('/');
+    //     return redirect('/');
 
-    }
+    // }
 
     public function chargePayment(Request $request) {
 

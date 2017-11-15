@@ -11,6 +11,17 @@ use App\Album;
 
 class AlbumController extends Controller
 {
+
+    public function __construct() {
+
+        $this->middleware('auth', ['except' => [
+            'index',
+            'show',
+            'genre'
+        ]]);
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -85,17 +96,6 @@ class AlbumController extends Controller
         $artist->albums()->save($album);
 
         return redirect()->action('ArtistController@show', $artistId);
-    }
-
-    /**
-     * Add to cart
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function addToCart($id)
-    {
-        //
     }
 
     /**

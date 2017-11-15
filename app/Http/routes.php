@@ -16,6 +16,11 @@ Route::get('/', 'ShopController@index');
 Route::resource('artist', 'ArtistController');
 Route::resource('album', 'AlbumController');
 Route::resource('track', 'TrackController');
+Route::resource('user', 'UserController');
+
+Route::get('/login', 'UserController@login');
+Route::post('/login', 'UserController@authLogin');
+Route::get('/logout', 'UserController@logout');
 
 Route::get('/album/create/{id}', 'AlbumController@create');
 Route::get('/track/create/{id}', 'TrackController@create');
@@ -27,7 +32,7 @@ Route::get('/cart/remove/{id}', 'CartController@removeFromCart');
 Route::get('/cart/remove-one/{id}', 'CartController@removeOne');
 Route::get('/cart/add-one/{id}', 'CartController@addOne');
 Route::get('/cart/{id}', 'CartController@addToCart');
-Route::get('/checkout', 'CartController@checkout');
+// Route::get('/checkout', ['middleware' => 'auth', 'uses' => 'CartController@checkout']);
 Route::post('/checkout', 'CartController@chargePayment');
 
 Route::get('/session/delete', 'CartController@deleteSession');
