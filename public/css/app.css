@@ -362,9 +362,12 @@ header {
       float: left; }
 
 .cart-list {
-  margin-top: 50px; }
+  margin-top: 50px;
+  background-color: white;
+  padding: 5%; }
   .cart-list li {
-    margin-bottom: 30px;
+    padding: 15px 0;
+    border-bottom: solid 1px #f7f7f7;
     overflow: hidden; }
     .cart-list li .cart-image-container {
       width: 10%;
@@ -375,7 +378,8 @@ header {
     .cart-list li .cart-actions {
       float: left; }
       .cart-list li .cart-actions li {
-        margin-bottom: 0; }
+        padding: 0;
+        border: none; }
       .cart-list li .cart-actions span {
         font-size: 1.5em; }
 

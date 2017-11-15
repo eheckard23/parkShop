@@ -1,7 +1,10 @@
 .cart-list {
 	margin-top: 50px;
+	background-color: white;
+	padding: 5%;
 	li {
-		margin-bottom: 30px;
+		padding: 15px 0;
+		border-bottom: solid 1px $light-gray;
 		overflow: hidden;
 		.cart-image-container {
 			width: 10%;
@@ -14,7 +17,8 @@
 		.cart-actions {
 			float: left;
 			li {
-				margin-bottom: 0;
+				padding: 0;
+				border: none;
 			}
 			span {
 				font-size: 1.5em;

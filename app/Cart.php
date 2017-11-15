@@ -2,71 +2,88 @@
 
 namespace App;
 
-class Cart
-{
+class Cart {
+
     public $items = null;
     public $totalQty = 0;
     public $totalPrice = 0;
 
     public function __construct($oldCart) {
-    	if($oldCart) {
-    		// cart already exists
-    		$this->items = $oldCart->items;
-    		$this->totalQty = $oldCart->totalQty;
-    		$this->totalPrice = $oldCart->totalPrice;
-    	}
+
+        if($oldCart) {
+            $this->items = $oldCart->items;
+            $this->totalQty = $oldCart->totalQty;
+            $this->totalPrice = $oldCart->totalPrice;
+        }
+
     }
 
     // add new item
     public function add($item, $id) {
-    	$storedItem = [
-    		'qty' => 0,
-    		'price' => $item->price,
-    		'item' => $item
-    	];
 
-    	if($this->items) {
-    		if (array_key_exists($id, $this->items)) {
-    			$storedItem = $this->items[$id];
-    		}
-    	}
-    	$storedItem['qty']++;
-    	$storedItem['price'] = $item['price'] * $storedItem['qty'];
-    	$this->items[$id] = $storedItem;
-    	$this->totalQty++;
-    	$this->totalPrice += $item->price;
+        $storedItem = [
+            'qty' => 0,
+            'item' => $item,
+            'price' => $item['price']
+        ];
+
+        if($this->items) {
+            if(array_key_exists($id, $this->items)) {
+                $storedItem = $this->items[$id];
+            };
+        }
+
+        $storedItem['qty']++;
+        $storedItem['price'] = $item['price'] * $storedItem['qty'];
+        $this->items[$id] = $storedItem;
+        $this->totalQty++;
+        $this->totalPrice += $item['price'];
+
     }
 
-    // add one to cart
+    // add one item
     public function addOne($item, $id) {
-        if (array_key_exists($id, $this->items)) {
+
+        if(array_key_exists($id, $this->items)) {
+
             $this->items[$id]['qty']++;
             $this->items[$id]['price'] += $this->items[$id]['item']['price'];
             $this->totalQty++;
             $this->totalPrice += $this->items[$id]['item']['price'];
+
         }
+
     }
 
-    // remove item from cart
-    public function remove($item, $id) {
-        if (array_key_exists($id, $this->items)) {
-            $this->totalPrice -= $this->items[$id]['price'];
+    // removeAll
+    public function removeAll($item, $id) {
+
+        if(array_key_exists($id, $this->items)) {
+
             $this->totalQty -= $this->items[$id]['qty'];
+            $this->totalPrice -= $this->items[$id]['price'];
             unset($this->items[$id]);
+
         }
+
     }
 
-    // remove item from cart
-    public function removeByOne($item, $id) {
-        if (array_key_exists($id, $this->items)) {
+    // remove one
+    public function removeOne($item, $id) {
+
+        if(array_key_exists($id, $this->items)) {
+
             $this->items[$id]['qty']--;
             $this->items[$id]['price'] -= $this->items[$id]['item']['price'];
             $this->totalQty--;
             $this->totalPrice -= $this->items[$id]['item']['price'];
 
-            if ($this->items[$id]['qty'] <= 0) {
+            if($this->items[$id]['qty'] <= 0) {
                 unset($this->items[$id]);
             }
+
         }
+
     }
+
 }
