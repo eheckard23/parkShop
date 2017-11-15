@@ -36,4 +36,13 @@ class Cart
     	$this->totalQty++;
     	$this->totalPrice += $item->price;
     }
+
+    // remove item from cart
+    public function remove($item, $id) {
+        if (array_key_exists($id, $this->items)) {
+            $this->totalPrice -= $this->items[$id]['price'];
+            $this->totalQty -= $this->items[$id]['qty'];
+            unset($this->items[$id]);
+        }
+    }
 }

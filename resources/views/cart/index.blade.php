@@ -13,6 +13,7 @@
 	<ul>
 		@foreach($items as $item)
 			<li>{{ $item['item']['album_title'] }}</li>
+			<a href="{{ url('cart/remove', $item['item']['id']) }}">Remove</a>
 		@endforeach
 	</ul>
 	

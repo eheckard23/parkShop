@@ -23,4 +23,7 @@ Route::get('/track/create/{id}', 'TrackController@create');
 Route::get('/genre/{genre}', 'AlbumController@genre');
 
 Route::get('/cart', 'CartController@index');
+Route::get('/cart/remove/{id}', 'CartController@removeFromCart');
 Route::get('/cart/{id}', 'CartController@addToCart');
+
+Route::get('/session/delete', 'CartController@deleteSession');
