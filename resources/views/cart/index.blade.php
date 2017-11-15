@@ -12,8 +12,9 @@
 	
 	<ul>
 		@foreach($items as $item)
-			<li>{{ $item['item']['album_title'] }}</li>
-			<a href="{{ url('cart/remove', $item['item']['id']) }}">Remove</a>
+			<li>{{ $item['item']['album_title'] }} ({{ $item['qty'] }})</li>
+			<a href="{{ url('cart/remove-one', $item['item']['id']) }}">Remove One</a>
+			<a href="{{ url('cart/remove', $item['item']['id']) }}">Remove All</a>
 		@endforeach
 	</ul>
 	

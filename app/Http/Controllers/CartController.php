@@ -59,6 +59,24 @@ class CartController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     * @param id
+     */
+    public function removeOneFromCart(Request $request, $id) {
+    	$item = Album::find($id);
+    	$oldCart = Session::has('cart') ? Session::get('cart') : null;
+    	$cart = new Cart($oldCart);
+
+    	$cart->removeByOne($item, $id);
+
+    	$request->session()->put('cart', $cart);
+
+    	return redirect()->back();
+    }
+
+    /**
      * Delete the current session
      *
      * @return \Illuminate\Http\Response

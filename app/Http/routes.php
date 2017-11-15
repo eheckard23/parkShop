@@ -24,6 +24,7 @@ Route::get('/genre/{genre}', 'AlbumController@genre');
 
 Route::get('/cart', 'CartController@index');
 Route::get('/cart/remove/{id}', 'CartController@removeFromCart');
+Route::get('/cart/remove-one/{id}', 'CartController@removeOneFromCart');
 Route::get('/cart/{id}', 'CartController@addToCart');
 
 Route::get('/session/delete', 'CartController@deleteSession');
